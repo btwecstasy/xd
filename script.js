@@ -4,4 +4,10 @@ function showContent(contentId) {
 
     const selectedContent = document.getElementById(contentId);
     selectedContent.classList.add('active');
+
+    const buttons = document.querySelectorAll('.navbar button');
+    buttons.forEach(button => button.classList.remove('active'));
+
+    const selectedButton = document.querySelector(`.navbar button[onclick="showContent('${contentId}')"]`);
+    selectedButton.classList.add('active');
 }
