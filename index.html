@@ -55,12 +55,13 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (window.Telegram && window.Telegram.WebApp) {
-                window.Telegram.WebApp.ready();
-                window.Telegram.WebApp.expand();
-            }
-        });
+        // Вызываем expand() сразу после загрузки страницы
+        if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.ready();
+            window.Telegram.WebApp.expand();
+            window.Telegram.WebApp.backgroundColor = '#121212'; // Устанавливаем цвет фона
+            window.Telegram.WebApp.enableClosingConfirmation(); // Включаем подтверждение закрытия
+        }
     </script>
 </body>
 </html>
